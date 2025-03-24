@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import Game from './components/Game';
-import './index.css';
+import Game from './Game';
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false);
 
   return (
-    <div className="app">
+    <div className="App">
+      {/* Start Screen */}
       {!gameStarted ? (
         <div className="start-screen">
-          <h1>🚀 Rocket Game</h1>
+          <h1>Asteroid Dodge</h1>
           <button onClick={() => setGameStarted(true)}>Start Game</button>
         </div>
       ) : (
+        /* Game Screen */
         <Game onGameOver={() => setGameStarted(false)} />
       )}
     </div>
